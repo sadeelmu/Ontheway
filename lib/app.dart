@@ -1,5 +1,6 @@
-import 'package:beltareeq/screens/home_page/home_page_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'core/screens/home_page/home_page_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
