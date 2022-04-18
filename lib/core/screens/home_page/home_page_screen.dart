@@ -1,4 +1,4 @@
-import 'package:beltareeq/screens/home_page/home_page_bloc.dart';
+import 'package:beltareeq/core/screens/home_page/home_page_bloc.dart';
 import 'package:flutter/material.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -21,21 +21,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
             centerTitle: true,
             toolbarHeight: 350,
             title: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Container(
-                width: 260,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Good morning, ",
-                      style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.normal),
-                    ),
-                    Text(
-                      bloc.name,
-                      style: TextStyle(color: Color(0xff003B8E), fontSize: 12, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
+              Row(
+                children: [
+                  Text(
+                    "Good morning, ",
+                    style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.normal),
+                  ),
+                  Text(
+                    bloc.name,
+                    style: TextStyle(color: Color(0xff003B8E), fontSize: 12, fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
               Text(
                 "Where are you going?",
