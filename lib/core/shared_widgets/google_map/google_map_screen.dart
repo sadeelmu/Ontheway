@@ -1,4 +1,9 @@
+import 'dart:async';
+
+import 'package:beltareeq/core/custom_widgets/custom_text.dart';
+import 'package:beltareeq/core/enums/map_permision_enum.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'google_map_bloc.dart';
 
@@ -10,23 +15,70 @@ class GoogleMapScreen extends StatefulWidget {
 }
 
 class _GoogleMapScreenState extends State<GoogleMapScreen> {
-  GoogleMapBloc _bloc = GoogleMapBloc();
+  GoogleMapBloc bloc = GoogleMapBloc();
   GoogleMapController? controller;
+  @override
+  void initState() {
+    GeolocatorPlatform.instance.getServiceStatusStream().listen((event) {
+      print(event);
+    });
+
+    Timer.run(() async {
+      print((await GeolocatorPlatform.instance.requestPermission()).name);
+
+      await bloc.getPermission();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: GoogleMap(
-          onMapCreated: (camController) {
-            controller = camController;
-          },
-          initialCameraPosition: CameraPosition(
-            target: LatLng(32.020499918, 35.87249651),
-            zoom: 14.4746,
-          ),
-        ),
-      ),
+      body: StreamBuilder<MapPermission>(
+          stream: bloc.permissionStatusController.stream,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              if (snapshot.data == MapPermission.GRANTED) {
+                return FutureBuilder<Position>(
+                    future: bloc.getCurrentPosition(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Container(
+                          child: GoogleMap(
+                            onMapCreated: (camController) {
+                              controller = camController;
+                            },
+                            initialCameraPosition: CameraPosition(
+                              target: LatLng(snapshot.data?.latitude ?? 0, snapshot.data?.longitude ?? 0),
+                              zoom: 14.4746,
+                            ),
+                          ),
+                        );
+                      } else {
+                        return Container();
+                      }
+                    });
+              } else {
+                return Center(
+                  child: InkWell(
+                    onTap: () async {
+                      await Geolocator.openAppSettings();
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 120,
+                      child: CustomText(
+                        title: "Require Permissions",
+                        style: null,
+                      ),
+                    ),
+                  ),
+                );
+              }
+            } else {
+              return Center(child: CircularProgressIndicator());
+            }
+          }),
     );
   }
 }

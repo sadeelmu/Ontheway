@@ -1,0 +1,1 @@
+enum MapPermission { DENIED, GRANTED }
