@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'core/screens/destination_page/destination_page_screen.dart';
 import 'core/screens/home_page/home_page_screen.dart';
+import 'core/screens/login_page/login_page_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -9,7 +11,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePageScreen(),
+        home: DestinationPageScreen(),
+        initialRoute: '/',
+        routes: {
+          'destination_page': (context) => DestinationPageScreen(),
+          'login_page':(context) => LoginPageScreen(),
+          'home_page': (context) => HomePageScreen(),
+
+        },
     );
   }
 }
