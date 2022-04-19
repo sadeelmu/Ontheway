@@ -67,7 +67,7 @@ class _DestinationPageScreenState extends State<DestinationPageScreen> {
                       width: MediaQuery.of(context).size.width,
                       child: Padding(
                         padding: const EdgeInsets.all(
-                          18,
+                          15,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
