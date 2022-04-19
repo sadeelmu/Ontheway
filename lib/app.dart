@@ -11,14 +11,12 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: DestinationPageScreen(),
-        initialRoute: '/',
-        routes: {
-          'destination_page': (context) => DestinationPageScreen(),
-          'login_page':(context) => LoginPageScreen(),
-          'home_page': (context) => HomePageScreen(),
-
-        },
+      initialRoute: 'destination_page',
+      routes: {
+        'destination_page': (context) => DestinationPageScreen(),
+        'login_page': (context) => LoginPageScreen(),
+        'home_page': (context) => HomePageScreen(),
+      },
     );
   }
 }

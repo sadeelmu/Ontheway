@@ -10,13 +10,24 @@ class GoogleMapScreen extends StatefulWidget {
 }
 
 class _GoogleMapScreenState extends State<GoogleMapScreen> {
-
+  GoogleMapBloc _bloc = GoogleMapBloc();
+  GoogleMapController? controller;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GoogleMap(
-        initialCameraPosition: _kInitialPosition,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: GoogleMap(
+          onMapCreated: (camController) {
+            controller = camController;
+          },
+          initialCameraPosition: CameraPosition(
+            target: LatLng(32.020499918, 35.87249651),
+            zoom: 14.4746,
+          ),
+        ),
       ),
     );
   }
