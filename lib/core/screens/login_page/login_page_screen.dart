@@ -10,15 +10,16 @@ class LoginPageScreen extends StatefulWidget {
 class _LoginPageScreenState extends State<LoginPageScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(10),
-      child:ListView(
-        children: <Widget> [
-          Container(
-            alignment: Alignment.center,
-          )
-        ],
-      )
+    return Scaffold(
+      body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: ListView(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.center,
+              )
+            ],
+          )),
     );
   }
 }

@@ -1,5 +1,7 @@
+import 'package:beltareeq/routes.dart';
 import 'package:flutter/material.dart';
 
+import 'core/constants/routers_constants.dart';
 import 'core/screens/destination_page/destination_page_screen.dart';
 import 'core/screens/home_page/home_page_screen.dart';
 import 'core/screens/login_page/login_page_screen.dart';
@@ -10,15 +12,6 @@ class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: DestinationPageScreen(),
-        initialRoute: '/',
-        routes: {
-          'destination_page': (context) => DestinationPageScreen(),
-          'login_page':(context) => LoginPageScreen(),
-          'home_page': (context) => HomePageScreen(),
-
-        },
-    );
+    return MaterialApp(initialRoute: RoutesConstants.location_search_page, routes: routes);
   }
 }

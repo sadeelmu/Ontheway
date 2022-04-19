@@ -16,7 +16,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstants.color_0xfff5f1e3,
+      backgroundColor: ColorConstants.color_0xffffffff,
       appBar: PreferredSize(
           preferredSize: Size(MediaQuery.of(context).size.width, 150),
           child: AppBar(
@@ -40,7 +40,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ]),
-            backgroundColor: ColorConstants.color_0xfff5f1e3,
+            backgroundColor: ColorConstants.color_0xffffffff,
           )),
       body: Column(
         children: [
