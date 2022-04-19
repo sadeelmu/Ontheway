@@ -1,3 +1,4 @@
+import 'package:beltareeq/core/shared_widgets/geolocater/geolocater.dart';
 import 'package:beltareeq/routes.dart';
 import 'package:flutter/material.dart';
 
