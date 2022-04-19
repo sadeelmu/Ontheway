@@ -22,10 +22,15 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
           title: "Dropoff location",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
-          size: 25,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 25,
+          ),
         ),
       ),
       body: SafeArea(
