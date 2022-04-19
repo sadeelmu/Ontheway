@@ -1,1 +1,4 @@
-class LocationSearchBloc {}
+class LocationSearchBloc {
+
+
+}
