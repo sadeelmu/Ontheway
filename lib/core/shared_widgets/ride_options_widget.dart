@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import '../constants/color_constants.dart';
 
 class RideOptionWidget extends StatelessWidget {
-  const RideOptionWidget({Key? key, this.price, this.image, this.time, this.isBestPrice}) : super(key: key);
+  const RideOptionWidget({Key? key, this.price, this.image, this.time, this.isBestPrice, this.color}) : super(key: key);
   final String? price;
   final String? image;
   final String? time;
   final bool? isBestPrice;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {

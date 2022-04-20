@@ -196,6 +196,7 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                                   isBestPrice: ride.isBestPrice,
                                   price: ride.price,
                                   time: ride.time,
+                                  color: ride.color,
                                 ),
                               SizedBox(
                                 height: 30,
