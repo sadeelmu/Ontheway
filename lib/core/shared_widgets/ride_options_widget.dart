@@ -40,12 +40,12 @@ class RideOptionWidget extends StatelessWidget {
         Column(children: [
           CustomText(
             title: price,
-            style: TextStyle(),
+            style: TextStyle(color: color),
             shouldFit: false,
           ),
           CustomText(
             title: time,
-            style: TextStyle(),
+            style: TextStyle(color: color),
             shouldFit: false,
           ),
         ]),

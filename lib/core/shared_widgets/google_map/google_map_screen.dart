@@ -24,6 +24,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
     });
 
     Timer.run(() async {
+      await bloc.loadIcon();
       print((await GeolocatorPlatform.instance.requestPermission()).name);
 
       await bloc.getPermission();
@@ -45,6 +46,17 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                       if (snapshot.hasData) {
                         return Container(
                           child: GoogleMap(
+                            myLocationButtonEnabled: false,
+                            markers: bloc.setMarkers(snapshot.data ??
+                                Position(
+                                    longitude: 0.0,
+                                    latitude: 0.0,
+                                    timestamp: DateTime.now(),
+                                    accuracy: 0,
+                                    altitude: 0,
+                                    heading: 0,
+                                    speed: 0,
+                                    speedAccuracy: 0)),
                             onMapCreated: (camController) {
                               controller = camController;
                             },
