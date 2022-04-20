@@ -15,7 +15,6 @@ class LocationSearchScreen extends StatefulWidget {
 }
 
 class _LocationSearchScreenState extends State<LocationSearchScreen> {
-
   StreamController<bool> shouldShowListController = StreamController<bool>.broadcast();
 
   @override
@@ -74,36 +73,42 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                   ),
                 ],
               ),
-                StreamBuilder<bool>(
+              StreamBuilder<bool>(
                   stream: shouldShowListController.stream,
                   initialData: false,
                   builder: (context, snapshot) {
-                    if(snapshot.data?? false){
-                      return ListView.builder(itemBuilder: (context,count){
-                        return Container(
-                          child: Column(
-                            children: [
-                              CustomText(title: MockService().mockLoction[count].locationName, style: null),
-                              CustomText(title: MockService().mockLoction[count].locationSubTitle, style: null)],
-                          ),
-                        );
-                      },
-                        itemCount: MockService().mockLoction.length,
-                        padding: const EdgeInsets.all(5),
-
+                    if (snapshot.data ?? false) {
+                      return Expanded(
+                        child: ListView.builder(
+                          itemBuilder: (context, count) {
+                            return Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  CustomText(title: MockService().mockLoction[count].locationName, style: null),
+                                  CustomText(title: MockService().mockLoction[count].locationSubTitle, style: null),
+                                  Divider(
+                                    color: Colors.grey,
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          itemCount: MockService().mockLoction.length,
+                          padding: const EdgeInsets.all(5),
+                        ),
                       );
-                    } else{
+                    } else {
                       return Container();
                     }
-
-                  }
-                ),
+                  }),
             ],
-
           ),
         ),
       ),
     );
-
   }
 }
