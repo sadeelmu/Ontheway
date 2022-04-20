@@ -30,7 +30,10 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  child: Icon(Icons.arrow_back),
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
                   backgroundColor: ColorConstants.color_0xff003B8E,
                 ),
                 SizedBox(
