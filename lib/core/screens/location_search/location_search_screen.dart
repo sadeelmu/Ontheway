@@ -80,11 +80,10 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                   ),
                 ],
               ),
+
+
               SizedBox(
-                height: 20,
-
-              ),
-
+                height: 20),
 
 
               StreamBuilder<bool>(
