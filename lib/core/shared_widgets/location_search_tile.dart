@@ -28,12 +28,16 @@ class _LocationSearchTileState extends State<LocationSearchTile> {
             title:  "PSUT",
             style: TextStyle(),
             shouldFit: false,
+
           ),
           SizedBox(
             height: 5,
           ),
-        ]),
+        ]
+
+        ),
       ],
+
     );
 
   

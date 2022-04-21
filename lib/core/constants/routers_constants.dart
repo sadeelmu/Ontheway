@@ -5,4 +5,5 @@ class RoutesConstants {
   static const location_search_page = "location_search_page";
   static const ride_options_page = "ride_options_page";
   static const location_pickup = "location_pickup";
+  static const dropoff_location = "dropoff_location";
 }

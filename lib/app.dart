@@ -14,7 +14,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(initialRoute: RoutesConstants.location_search_page, routes: routes);
+    return MaterialApp(initialRoute: RoutesConstants.destination_page, routes: routes);
 
 
   }
