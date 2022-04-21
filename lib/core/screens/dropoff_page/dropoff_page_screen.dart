@@ -31,10 +31,14 @@ class _DropoffLocationState extends State<DropoffLocation> {
             hasBackIcon: true),
         body: CustomMapSearchScreen(
           hasButton: true,
+          onSearchTap: () {
+            Navigator.pushNamed(context, RoutesConstants.location_search_page);
+          },
+          buttonText: "Confirm Dropoff location",
+          searchHintText: "where to go",
           buttonTab: () {
             Navigator.pushNamed(context, RoutesConstants.location_pickup);
           },
-        )
-    );
+        ));
   }
 }

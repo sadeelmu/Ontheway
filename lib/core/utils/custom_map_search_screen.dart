@@ -6,9 +6,19 @@ import '../custom_widgets/custom_text.dart';
 import '../shared_widgets/google_map/google_map_screen.dart';
 
 class CustomMapSearchScreen extends StatelessWidget {
-  const CustomMapSearchScreen({Key? key, this.onSearchTap, this.hasButton, this.textEditingController, this.buttonTab})
+  const CustomMapSearchScreen(
+      {Key? key,
+      this.onSearchTap,
+      this.hasButton,
+      this.textEditingController,
+      this.buttonTab,
+      this.buttonText = "",
+      this.searchHintText = ""})
       : super(key: key);
   final VoidCallback? onSearchTap;
+  final String? buttonText;
+  final String? searchHintText;
+
   final VoidCallback? buttonTab;
   final bool? hasButton;
   final TextEditingController? textEditingController;
@@ -63,14 +73,14 @@ class CustomMapSearchScreen extends StatelessWidget {
                                       onSearchTap!();
                                     },
                                     textAlignVertical: TextAlignVertical.center,
-                                    decoration: const InputDecoration(
+                                    decoration: InputDecoration(
                                         suffixIcon: Icon(
                                           Icons.search,
                                           color: ColorConstants.color_0xff707070,
                                         ),
                                         contentPadding: const EdgeInsets.only(bottom: 0, left: 12),
                                         hintStyle: TextStyle(fontWeight: FontWeight.bold),
-                                        hintText: "Where to go",
+                                        hintText: searchHintText,
                                         border: InputBorder.none,
                                         alignLabelWithHint: true))),
                           ),
@@ -101,7 +111,7 @@ class CustomMapSearchScreen extends StatelessWidget {
                               padding: EdgeInsets.all(12),
                               child: CustomText(
                                 shouldFit: false,
-                                title: "Confirm PickUp",
+                                title: buttonText,
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),

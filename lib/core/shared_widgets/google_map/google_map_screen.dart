@@ -19,13 +19,10 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
   GoogleMapController? controller;
   @override
   void initState() {
-    GeolocatorPlatform.instance.getServiceStatusStream().listen((event) {
-      print(event);
-    });
+    GeolocatorPlatform.instance.getServiceStatusStream().listen((event) {});
 
     Timer.run(() async {
       await bloc.loadIcon();
-      print((await GeolocatorPlatform.instance.requestPermission()).name);
 
       await bloc.getPermission();
     });

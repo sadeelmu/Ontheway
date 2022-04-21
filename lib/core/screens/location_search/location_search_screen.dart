@@ -1,27 +1,21 @@
-import 'dart:async';
-
-import 'package:beltareeq/core/custom_widgets/custom_text.dart';
-import 'package:beltareeq/core/screens/location_search/location_search_bloc.dart';
-import 'package:beltareeq/core/services/mock_services.dart';
-import 'package:beltareeq/core/shared_widgets/location_search_tile.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:beltareeq/core/constants/color_constants.dart';
+import 'package:beltareeq/core/constants/routers_constants.dart';
+import 'package:beltareeq/core/utils/custom_map_search_screen.dart';
 import 'package:flutter/material.dart';
 
-
-import '../../constants/color_constants.dart';
-import '../../constants/routers_constants.dart';
 import '../../custom_widgets/custom_app_bar.dart';
-import '../../utils/custom_map_search_screen.dart';
+import '../../custom_widgets/custom_text.dart';
+import '../../shared_widgets/google_map/google_map_screen.dart';
 
 class LocationSearchScreen extends StatefulWidget {
   const LocationSearchScreen({Key? key}) : super(key: key);
 
   @override
-  State<LocationSearchScreen> createState() => _LocationSearchScreenState();
+  _LocationSearchScreenState createState() => _LocationSearchScreenState();
 }
 
 class _LocationSearchScreenState extends State<LocationSearchScreen> {
-  StreamController<bool> shouldShowListController = StreamController<bool>.broadcast();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +31,12 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
             hasBackIcon: true),
         body: CustomMapSearchScreen(
           hasButton: true,
+          buttonText: "Confirm Dropoff location",
+          searchHintText: "where to go",
           buttonTab: () {
             Navigator.pushNamed(context, RoutesConstants.location_pickup);
           },
-        )
+        ));
     //   appBar: AppBar(
     //     backgroundColor: ColorConstants.color_0xff1A5AD9,
     //     elevation: 0,
@@ -190,6 +186,5 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
     //       ),
     //     ),
     //   ),
-    );
   }
 }

@@ -48,6 +48,8 @@ class _DestinationPageScreenState extends State<DestinationPageScreen> {
             )),
         body: CustomMapSearchScreen(
           hasButton: false,
+          buttonText: "Confirm PickUp",
+          searchHintText: "My location",
           onSearchTap: () {
             Navigator.pushNamed(context, RoutesConstants.location_search_page);
           },

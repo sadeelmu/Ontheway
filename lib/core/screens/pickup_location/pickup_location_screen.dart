@@ -30,6 +30,8 @@ class _LocationPickupState extends State<LocationPickup> {
             hasBackIcon: true),
         body: CustomMapSearchScreen(
           hasButton: true,
+          buttonText: "Confirm PickUp",
+          searchHintText: "My location",
           buttonTab: () {
             Navigator.pushNamed(context, RoutesConstants.ride_options_page);
           },
