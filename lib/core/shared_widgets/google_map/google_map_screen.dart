@@ -47,21 +47,13 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                         return Container(
                           child: GoogleMap(
                             myLocationButtonEnabled: false,
-                            markers: bloc.setMarkers(snapshot.data ??
-                                Position(
-                                    longitude: 0.0,
-                                    latitude: 0.0,
-                                    timestamp: DateTime.now(),
-                                    accuracy: 0,
-                                    altitude: 0,
-                                    heading: 0,
-                                    speed: 0,
-                                    speedAccuracy: 0)),
+                            markers: bloc.drawMarkers(snapshot.data!),
                             onMapCreated: (camController) {
                               controller = camController;
                             },
+                            polylines: bloc.drawPolyLines(snapshot.data!),
                             initialCameraPosition: CameraPosition(
-                              target: LatLng(snapshot.data?.latitude ?? 0, snapshot.data?.longitude ?? 0),
+                              target: LatLng((snapshot.data?.latitude ?? 0 + 0.2), (snapshot.data?.longitude) ?? 0 + 0.2),
                               zoom: 14.4746,
                             ),
                           ),
