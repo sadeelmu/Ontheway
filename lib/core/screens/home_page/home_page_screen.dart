@@ -31,7 +31,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     children: [
                       TextSpan(
                         text: bloc.name,
-                        style: TextStyle(color: ColorConstants.color_0xff003B8E, fontSize: 12, fontWeight: FontWeight.bold),
+                        style: TextStyle(color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
                       )
                     ]),
               ),
@@ -76,7 +76,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 CustomText(
                                   title: "History -7th Circle, Amman",
                                   style: TextStyle(
-                                      color: ColorConstants.color_0xff003B8E, fontSize: 12, fontWeight: FontWeight.bold),
+                                      color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
                                 ),
                                 CustomText(
                                   title: "Home",
@@ -104,7 +104,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                         child: CustomText(
                                           title: "History -To - Al-Shaymaa As-Saadeyah St., Amman",
                                           style: TextStyle(
-                                              color: ColorConstants.color_0xff003B8E, fontSize: 12, fontWeight: FontWeight.bold),
+                                              color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
                                         ),
                                       ),
                                     ),
@@ -113,7 +113,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 CustomText(
                                   title: "Psut",
                                   style: TextStyle(
-                                      color: ColorConstants.color_0xff003B8E, fontSize: 16, fontWeight: FontWeight.bold),
+                                      color: ColorConstants.color_0xff1A5AD9, fontSize: 16, fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),

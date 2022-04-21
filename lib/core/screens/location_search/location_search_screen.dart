@@ -22,7 +22,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ColorConstants.color_0xff003B8E,
+        backgroundColor: ColorConstants.color_0xff1A5AD9,
         elevation: 0,
         centerTitle: true,
         title: CustomText(
@@ -38,7 +38,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
             child: CircleAvatar(
               child: const Icon(
                 Icons.arrow_back_outlined,
-                color: ColorConstants.color_0xff003B8E,
+                color: ColorConstants.color_0xff1A5AD9,
                 size: 25,
               ),
               backgroundColor: ColorConstants.color_0xffffffff,
@@ -121,7 +121,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                   ],
                                 ),
                                   Divider(
-                                    color: ColorConstants.color_0xff003B8E,
+                                    color: ColorConstants.color_0xff1A5AD9,
                                   ),
                                   LocationSearchTile(),
 
@@ -147,7 +147,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                     ],
                                   ),
                                   Divider(
-                                    color: ColorConstants.color_0xff003B8E,
+                                    color: ColorConstants.color_0xff1A5AD9,
                                   ),
                                   LocationSearchTile(),
                                 ],

@@ -5,6 +5,7 @@ import 'package:beltareeq/core/shared_widgets/google_map/google_map_screen.dart'
 import 'package:beltareeq/core/shared_widgets/ride_options_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../custom_widgets/custom_app_bar.dart';
 import '../../custom_widgets/custom_text.dart';
 
 class RideOptionsScreen extends StatefulWidget {
@@ -20,43 +21,50 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstants.color_0xffffffff,
-      appBar: PreferredSize(
-          preferredSize: Size(MediaQuery.of(context).size.width, 150),
-          child: AppBar(
-            elevation: 0,
-            centerTitle: true,
-            toolbarHeight: 350,
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  ),
-                  backgroundColor: ColorConstants.color_0xff003B8E,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  RichText(
-                    text: TextSpan(children: [
-                      TextSpan(
-                        text: bloc.name,
-                        style: TextStyle(color: ColorConstants.color_0xff003B8E, fontSize: 12, fontWeight: FontWeight.bold),
-                      )
-                    ]),
-                  ),
-                  CustomText(
-                    title: "Choose The Best Price",
-                    style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                ]),
-              ],
-            ),
-            backgroundColor: ColorConstants.color_0xffffffff,
-          )),
+      appBar: BaseAppBar(
+          backgroundColor: ColorConstants.color_0xffffffff,
+          coloredfirstTextColor: ColorConstants.color_0xff1A5AD9,
+          coloresfirstText: bloc.name,
+          isToLined: true,
+          secondeText: "Choose The Best Price",
+          secondeTextColor: Colors.black,
+          avatarColor: ColorConstants.color_0xff1A5AD9,
+          iconColor: ColorConstants.color_0xffffffff,
+          hasBackIcon: true),
+      // appBar: PreferredSize(
+      //     preferredSize: Size(MediaQuery.of(context).size.width, 150),
+      //     child: AppBar(
+      //       elevation: 0,
+      //       centerTitle: true,
+      //       toolbarHeight: 350,
+      //       title: Row(
+      //         mainAxisAlignment: MainAxisAlignment.center,
+      //         children: [
+      //           CircleAvatar(
+      //             child: Icon(Icons.arrow_back,color: Colors.white,),
+      //             backgroundColor: ColorConstants.color_0xff1A5AD9,
+      //           ),
+      //           SizedBox(
+      //             width: 10,
+      //           ),
+      //           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      //             RichText(
+      //               text: TextSpan(children: [
+      //                 TextSpan(
+      //                   text: bloc.name,
+      //                   style: TextStyle(color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
+      //                 )
+      //               ]),
+      //             ),
+      //             CustomText(
+      //               title: "Choose The Best Price",
+      //               style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
+      //             ),
+      //           ]),
+      //         ],
+      //       ),
+      //       backgroundColor: ColorConstants.color_0xffffffff,
+      //     )),
       body: Column(
         children: [
           Expanded(
@@ -103,7 +111,7 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                                   CustomText(
                                     title: "History -7th Circle, Amman",
                                     style: TextStyle(
-                                        color: ColorConstants.color_0xff003B8E, fontSize: 12, fontWeight: FontWeight.bold),
+                                        color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
                                   ),
                                   CustomText(
                                     title: "Home",
@@ -131,7 +139,7 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                                           child: CustomText(
                                             title: "History -To - Al-Shaymaa As-Saadeyah St., Amman",
                                             style: TextStyle(
-                                                color: ColorConstants.color_0xff003B8E,
+                                                color: ColorConstants.color_0xff1A5AD9,
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.bold),
                                           ),
@@ -142,7 +150,7 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                                   CustomText(
                                     title: "Psut",
                                     style: TextStyle(
-                                        color: ColorConstants.color_0xff003B8E, fontSize: 16, fontWeight: FontWeight.bold),
+                                        color: ColorConstants.color_0xff1A5AD9, fontSize: 16, fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -182,7 +190,7 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                                       style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
                                   Icon(
                                     Icons.settings_outlined,
-                                    color: ColorConstants.color_0xff003B8E,
+                                    color: ColorConstants.color_0xff1A5AD9,
                                     size: 30,
                                   ),
                                 ],
@@ -196,7 +204,6 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                                   isBestPrice: ride.isBestPrice,
                                   price: ride.price,
                                   time: ride.time,
-                                  color: ride.color,
                                 ),
                               SizedBox(
                                 height: 30,

@@ -19,7 +19,7 @@ class _LocationSearchTileState extends State<LocationSearchTile> {
 
     return Row(
       children: [
-        CircleAvatar(child: Icon(Icons.add_location, color: ColorConstants.color_0xffffffff,), backgroundColor: ColorConstants.color_0xff003B8E),
+        CircleAvatar(child: Icon(Icons.add_location, color: ColorConstants.color_0xffffffff,), backgroundColor: ColorConstants.color_0xff1A5AD9),
         SizedBox(
           width: 10,
         ),
