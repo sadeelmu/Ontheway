@@ -1,7 +1,9 @@
+import 'package:beltareeq/locator.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
 
 void main() {
-  runApp(const App());
+  setupLocator();
+  runApp(App());
 }

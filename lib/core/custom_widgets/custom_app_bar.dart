@@ -10,13 +10,13 @@ enum LeadingAction { CHANGEACCOUNT, BACK, NONE, CLOSE }
 enum AppBarBackgroundType { IMAGE, MODAL, NONE }
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final VoidCallback? leadingActionTap;
   final Color? backgroundColor;
   final Color? firstTextColor;
   final Color? coloredfirstTextColor;
   final Color? avatarColor;
   final Color? secondeTextColor;
   final Color? iconColor;
-
   final bool? isToLined;
   final String? coloresfirstText;
   final String? firstText;
@@ -34,7 +34,8 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.coloredfirstTextColor,
       this.hasBackIcon = true,
       this.iconColor,
-      this.avatarColor});
+      this.avatarColor,
+      this.leadingActionTap});
 
   @override
   Widget build(BuildContext context) {
@@ -48,19 +49,22 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: CircleAvatar(
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: iconColor,
-                  ),
-                  backgroundColor: avatarColor),
-            ),
+            hasBackIcon!
+                ? InkWell(
+                    borderRadius: BorderRadius.circular(15),
+                    onTap: () {
+                      leadingActionTap!();
+                    },
+                    child: CircleAvatar(
+                        child: Icon(
+                          Icons.arrow_back,
+                          color: iconColor,
+                        ),
+                        backgroundColor: avatarColor),
+                  )
+                : Container(),
             SizedBox(
-              width: 10,
+              width: hasBackIcon! ? 10 : 0,
             ),
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

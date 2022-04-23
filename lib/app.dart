@@ -1,21 +1,13 @@
-import 'package:beltareeq/core/shared_widgets/geolocater/geolocater.dart';
 import 'package:beltareeq/routes.dart';
 import 'package:flutter/material.dart';
-
-import 'core/constants/routers_constants.dart';
-import 'core/screens/destination_page/destination_page_screen.dart';
-import 'core/screens/home_page/home_page_screen.dart';
-import 'core/screens/login_page/login_page_screen.dart';
+import 'core/screens/container/container_screen.dart';
+import 'core/screens/google_map/google_map_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(initialRoute: RoutesConstants.destination_page, routes: routes);
-
-
+    return MaterialApp(home: GoogleMapScreen(view: ContainerScreen()), routes: routes);
   }
 }

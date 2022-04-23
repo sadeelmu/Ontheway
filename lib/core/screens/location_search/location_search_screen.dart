@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:beltareeq/core/constants/color_constants.dart';
 import 'package:beltareeq/core/constants/routers_constants.dart';
 import 'package:beltareeq/core/utils/custom_map_search_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../custom_widgets/custom_app_bar.dart';
-import '../../custom_widgets/custom_text.dart';
-import '../../shared_widgets/google_map/google_map_screen.dart';
 
 class LocationSearchScreen extends StatefulWidget {
   const LocationSearchScreen({Key? key}) : super(key: key);
