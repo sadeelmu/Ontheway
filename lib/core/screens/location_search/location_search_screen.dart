@@ -1,5 +1,6 @@
 import 'package:beltareeq/core/constants/color_constants.dart';
 import 'package:beltareeq/core/constants/routers_constants.dart';
+import 'package:beltareeq/core/services/mock_services.dart';
 import 'package:beltareeq/core/utils/custom_map_search_screen.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_app_bar.dart';
@@ -26,26 +27,32 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                   readOnly: true,
                   onTap: () {},
                   textAlignVertical: TextAlignVertical.center,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       suffixIcon: Icon(
                         Icons.search,
                         color: ColorConstants.color_0xff707070,
                       ),
-                      contentPadding: const EdgeInsets.only(bottom: 0, left: 12),
+                      contentPadding: EdgeInsets.only(bottom: 0, left: 12),
                       hintStyle: TextStyle(fontWeight: FontWeight.bold),
-                      hintText: "searchHintText",
+                      hintText: "search",
                       border: InputBorder.none,
                       alignLabelWithHint: true)),
             ),
             backgroundColor: ColorConstants.color_0xff1A5AD9,
             coloredfirstTextColor: ColorConstants.color_0xff1A5AD9,
-            isToLined: false,
+            isToLined: true,
+            firstText: "AJ",
+            firstTextColor: ColorConstants.color_0xffffffff,
             hasCircularBorder: true,
             secondeText: "Drop Off Location",
-            secondeTextColor: Colors.black,
+            secondeTextColor: ColorConstants.color_0xffffffff,
             avatarColor: ColorConstants.color_0xff1A5AD9,
             iconColor: ColorConstants.color_0xffffffff,
             hasBackIcon: true),
-        body: Container());
+        body: ListView.builder(
+            itemCount: MockService().mockLoction.length,
+            itemBuilder: (context, index) {
+              return Container();
+            }));
   }
 }
