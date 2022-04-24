@@ -1,4 +1,4 @@
 class DestinationPageBloc {
-  String _name = "Zaid";
+  String _name = "AJ";
   String get name => _name;
 }
