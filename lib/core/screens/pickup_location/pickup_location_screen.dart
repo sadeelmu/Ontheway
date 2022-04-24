@@ -3,6 +3,7 @@ import 'package:beltareeq/core/utils/custom_map_search_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../locator.dart';
+import '../../constants/routers_constants.dart';
 import '../../utils/view_observer.dart';
 
 class LocationPickup extends StatefulWidget {
@@ -17,6 +18,9 @@ class _LocationPickupState extends State<LocationPickup> {
   Widget build(BuildContext context) {
     return CustomMapSearchScreen(
       hasButton: true,
+      onSearchTap: () {
+        Navigator.pushNamed(context, RoutesConstants.location_search_page);
+      },
       buttonText: "Confirm PickUp",
       searchHintText: "My location",
       buttonTab: () {

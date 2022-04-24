@@ -82,6 +82,22 @@ class _AppBarViewsState extends State<AppBarViews> {
               iconColor: ColorConstants.color_0xffffffff,
               hasBackIcon: true));
           break;
+        case ViewEnum.START_RIDE:
+          viewObserver.appBarViews.add(BaseAppBar(
+              leadingActionTap: () {
+                viewObserver.popScreen();
+              },
+              backgroundColor: ColorConstants.color_0xffffffff,
+              coloredfirstTextColor: ColorConstants.color_0xffb0bfb,
+              firstTextColor: Colors.black,
+              coloresfirstText: "jeeny Driver, ",
+              firstText: "will be at your",
+              isToLined: true,
+              secondeText: "place in 5 minutes",
+              secondeTextColor: Colors.black,
+              avatarColor: ColorConstants.color_0xff1A5AD9,
+              iconColor: ColorConstants.color_0xffffffff,
+              hasBackIcon: true));
       }
       viewObserver.appbuildView.sink.add("event");
     });

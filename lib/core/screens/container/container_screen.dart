@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 
 import '../../../locator.dart';
 import '../../constants/color_constants.dart';
+import '../start_ride/start_ride_screen.dart';
 
 class ContainerScreen extends StatefulWidget {
   ContainerScreen({Key? key}) : super(key: key);
@@ -36,6 +37,9 @@ class _ContainerScreenState extends State<ContainerScreen> {
           break;
         case ViewEnum.RIDE_OPTIONS:
           viewObserver.views.add(RideOptionsScreen());
+          break;
+        case ViewEnum.START_RIDE:
+          viewObserver.views.add(StartRideScreen());
           break;
       }
       viewObserver.rebuildView.sink.add("");

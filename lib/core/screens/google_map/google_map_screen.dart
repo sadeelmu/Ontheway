@@ -1,6 +1,9 @@
 import 'dart:async';
 import 'package:beltareeq/core/custom_widgets/custom_text.dart';
 import 'package:beltareeq/core/enums/map_permision_enum.dart';
+import 'package:beltareeq/core/utils/geo_locator_methods.dart';
+import 'package:beltareeq/core/utils/map_components.dart';
+import 'package:beltareeq/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -23,7 +26,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
     GeolocatorPlatform.instance.getServiceStatusStream().listen((event) {});
 
     Timer.run(() async {
-      await bloc.loadIcon();
+      await locator<MapComponents>().loadIcon();
       await bloc.getPermission();
     });
     super.initState();
@@ -41,22 +44,28 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                 if (snapshot.hasData) {
                   if (snapshot.data == MapPermission.GRANTED) {
                     return FutureBuilder<Position>(
-                        future: bloc.getCurrentPosition(),
+                        future: locator<GeoLocatorMethods>().getCurrentPosition(),
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
                             return Container(
-                              child: GoogleMap(
-                                myLocationButtonEnabled: false,
-                                markers: bloc.drawMarkers(snapshot.data!),
-                                onMapCreated: (camController) {
-                                  controller = camController;
-                                },
-                                polylines: bloc.drawPolyLines(snapshot.data!),
-                                initialCameraPosition: CameraPosition(
-                                  target: LatLng((snapshot.data?.latitude ?? 0 + 0.2), (snapshot.data?.longitude) ?? 0 + 0.2),
-                                  zoom: 14.4746,
-                                ),
-                              ),
+                              child: FutureBuilder<Set<Polyline>>(
+                                  initialData: {},
+                                  future: bloc.drawePolyLines(snapshot.data!),
+                                  builder: (context, snapshotPolyLine) {
+                                    return GoogleMap(
+                                      myLocationButtonEnabled: false,
+                                      markers: bloc.drawMarkers(snapshot.data!),
+                                      onMapCreated: (camController) {
+                                        controller = camController;
+                                      },
+                                      polylines: snapshotPolyLine.data!,
+                                      initialCameraPosition: CameraPosition(
+                                        target:
+                                            LatLng((snapshot.data?.latitude ?? 0 + 0.2), (snapshot.data?.longitude) ?? 0 + 0.2),
+                                        zoom: 14.4746,
+                                      ),
+                                    );
+                                  }),
                             );
                           } else {
                             return Container();
