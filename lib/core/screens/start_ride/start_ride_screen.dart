@@ -50,12 +50,18 @@ class _StartRideScreenState extends State<StartRideScreen> {
                             RichText(
                               text: TextSpan(
                                   text: "Your Driver from ",
-                                  style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
                                   children: [
                                     TextSpan(
                                         text: "jeeny:",
                                         style: TextStyle(
-                                            color: ColorConstants.color_0xffb0bfb, fontSize: 12, fontWeight: FontWeight.bold))
+                                            color:
+                                                ColorConstants.color_0xffb0bfb,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold))
                                   ]),
                             ),
                             Row(
@@ -66,30 +72,41 @@ class _StartRideScreenState extends State<StartRideScreen> {
                                     Container(
                                       margin: EdgeInsets.all(8),
                                       padding: EdgeInsets.all(8),
-                                      decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(10)),
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
                                       child: Icon(
                                         Icons.image,
                                         color: Colors.white,
                                       ),
                                     ),
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         CustomText(
+                                            shouldFit: true,
                                             title: "Name Name",
-                                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18)),
                                         Row(
                                           children: [
                                             Icon(
                                               Icons.star_outline,
-                                              color: ColorConstants.color_0xffb0bfb,
+                                              color: ColorConstants
+                                                  .color_0xffb0bfb,
                                               size: 14,
                                             ),
                                             CustomText(
                                                 title: "4.9",
                                                 style: TextStyle(
-                                                    color: ColorConstants.color_0xffb0bfb,
-                                                    fontWeight: FontWeight.normal,
+                                                    color: ColorConstants
+                                                        .color_0xffb0bfb,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                     fontSize: 10)),
                                           ],
                                         )
@@ -100,12 +117,41 @@ class _StartRideScreenState extends State<StartRideScreen> {
                                 CustomText(
                                     title: "1.5 JD",
                                     style: TextStyle(
-                                        color: ColorConstants.color_0xffb0bfb, fontWeight: FontWeight.bold, fontSize: 20)),
+                                        color: ColorConstants.color_0xffb0bfb,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20)),
                               ],
                             ),
                             SizedBox(
                               height: 30,
-                            )
+                            ),
+                            Row(
+                                //icons here
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(Icons.message_outlined),
+                                  Icon(Icons.cancel_outlined),
+                                ]),
+                            Row(
+                                //text here
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  CustomText(
+                                      title: "Message",
+                                      style: TextStyle(
+                                          color: ColorConstants.color_0xffb0bfb,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 5)),
+                                  CustomText(
+                                      title: "Cancel Trip",
+                                      style: TextStyle(
+                                        color: ColorConstants.color_0xffb0bfb,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 5,
+                                      )),
+                                ]),
                           ],
                         ),
                       ),

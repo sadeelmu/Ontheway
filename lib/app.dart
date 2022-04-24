@@ -1,3 +1,4 @@
+import 'package:beltareeq/core/screens/start_ride/start_ride_screen.dart';
 import 'package:beltareeq/routes.dart';
 import 'package:flutter/material.dart';
 import 'core/screens/container/container_screen.dart';
@@ -8,6 +9,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: GoogleMapScreen(view: ContainerScreen()), routes: routes);
+    return MaterialApp(home: StartRideScreen());
   }
 }

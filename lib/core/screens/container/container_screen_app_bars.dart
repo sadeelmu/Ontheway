@@ -27,7 +27,7 @@ class _AppBarViewsState extends State<AppBarViews> {
         case ViewEnum.DESTENTION:
           viewObserver.appBarViews.add(BaseAppBar(
             firstText: "Good morning",
-            coloresfirstText: "zaid, ",
+            coloresfirstText: "AJ, ",
             isToLined: true,
             firstTextColor: Colors.black,
             hasBackIcon: false,
@@ -74,7 +74,7 @@ class _AppBarViewsState extends State<AppBarViews> {
               },
               backgroundColor: ColorConstants.color_0xffffffff,
               coloredfirstTextColor: ColorConstants.color_0xff1A5AD9,
-              coloresfirstText: "Zaid",
+              coloresfirstText: "AJ",
               isToLined: true,
               secondeText: "Choose The Best Price",
               secondeTextColor: Colors.black,
