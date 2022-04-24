@@ -18,13 +18,13 @@ class _LocationPickupState extends State<LocationPickup> {
   Widget build(BuildContext context) {
     return CustomMapSearchScreen(
       hasButton: true,
-      onSearchTap: () {
-        Navigator.pushNamed(context, RoutesConstants.location_search_page);
-      },
+      onSearchTap: () {},
       buttonText: "Confirm PickUp",
       searchHintText: "My location",
       buttonTab: () {
-        locator<ViewObserver>().rebuildViews(ViewEnum.DROPPOFF);
+        Navigator.pushNamed(context, RoutesConstants.location_search_page).then((value) {
+          locator<ViewObserver>().rebuildViews(ViewEnum.RIDE_OPTIONS);
+        });
       },
     );
   }

@@ -9,6 +9,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: StartRideScreen());
+    return MaterialApp(
+      home: GoogleMapScreen(
+        view: ContainerScreen(),
+      ),
+      routes: routes,
+    );
   }
 }

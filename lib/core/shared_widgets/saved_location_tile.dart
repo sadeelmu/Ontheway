@@ -4,38 +4,50 @@ import '../constants/color_constants.dart';
 import '../custom_widgets/custom_text.dart';
 
 class SavedLocationTiles extends StatelessWidget {
-  const SavedLocationTiles({Key? key}) : super(key: key);
+  const SavedLocationTiles({Key? key, this.title = "", this.subtitle = "", this.callBack}) : super(key: key);
+  final String? title;
+  final String? subtitle;
+  final Function(String value)? callBack;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CircleAvatar(
-          child: Icon(Icons.location_pin),
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return InkWell(
+      onTap: () {
+        callBack!(subtitle!);
+      },
+      child: Container(
+        child: Row(
           children: [
-            Row(
-              children: [
-                Expanded(
-                  child: FittedBox(
-                    fit: BoxFit.fill,
-                    child: CustomText(
-                      title: "History -To - Al-Shaymaa As-Saadeyah St., Amman",
-                      style: TextStyle(color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.all(5),
+              child: CircleAvatar(
+                child: Icon(Icons.location_pin),
+              ),
             ),
-            CustomText(
-              title: "Psut",
-              style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      CustomText(
+                        shouldFit: false,
+                        title: title,
+                        style: TextStyle(color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  CustomText(
+                    shouldFit: true,
+                    title: subtitle,
+                    style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 }
