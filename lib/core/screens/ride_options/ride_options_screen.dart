@@ -61,16 +61,22 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                         height: 30,
                       ),
                       for (var ride in MockService().rideOptionModel)
-                        InkWell(
-                          onTap: () {
-                            locator<ViewObserver>().rebuildViews(ViewEnum.START_RIDE);
-                          },
-                          child: RideOptionWidget(
-                            image: ride.image,
-                            isBestPrice: ride.isBestPrice,
-                            price: ride.price,
-                            time: ride.time,
-                          ),
+                        Column(
+                          children: [
+                            RideOptionWidget(
+                              callback: () {
+                                locator<ViewObserver>().rebuildViews(ViewEnum.START_RIDE);
+                              },
+                              image: ride.image,
+                              isBestPrice: ride.isBestPrice,
+                              price: ride.price,
+                              time: ride.time,
+                              color: ride.color,
+                            ),
+                            SizedBox(
+                              height: 15,
+                            )
+                          ],
                         ),
                       SizedBox(
                         height: 30,
