@@ -58,7 +58,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                                       onMapCreated: (camController) {
                                         controller = camController;
                                       },
-                                      polylines: snapshotPolyLine.data!,
+                                      // polylines: snapshotPolyLine.data!,
                                       initialCameraPosition: CameraPosition(
                                         target:
                                             LatLng((snapshot.data?.latitude ?? 0 + 0.2), (snapshot.data?.longitude) ?? 0 + 0.2),

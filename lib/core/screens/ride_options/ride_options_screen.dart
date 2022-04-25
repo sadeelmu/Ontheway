@@ -66,6 +66,8 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                             RideOptionWidget(
                               callback: () {
                                 locator<ViewObserver>().rebuildViews(ViewEnum.START_RIDE);
+                                locator<ViewObserver>().comColor = ride.color!;
+                                locator<ViewObserver>().compName = ride.comName!;
                               },
                               image: ride.image,
                               isBestPrice: ride.isBestPrice,

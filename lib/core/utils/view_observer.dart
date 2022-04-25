@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:beltareeq/core/enums/view_enum.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ViewObserver {
@@ -10,6 +11,8 @@ class ViewObserver {
   StreamController appbuildView = StreamController.broadcast();
   List<Widget> views = [];
   List<Widget> appBarViews = [];
+  Color comColor = Colors.black;
+  String compName = "";
 
   void popScreen() {
     appBarViews.removeLast();

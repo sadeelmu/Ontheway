@@ -88,9 +88,9 @@ class _AppBarViewsState extends State<AppBarViews> {
                 viewObserver.popScreen();
               },
               backgroundColor: ColorConstants.color_0xffffffff,
-              coloredfirstTextColor: ColorConstants.color_0xffb0bfb,
+              coloredfirstTextColor: locator<ViewObserver>().comColor,
               firstTextColor: Colors.black,
-              coloresfirstText: "jeeny Driver, ",
+              coloresfirstText: "${locator<ViewObserver>().compName} Driver, ",
               firstText: "will be at your",
               isToLined: true,
               secondeText: "place in 5 minutes",

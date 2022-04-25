@@ -3,6 +3,8 @@ import 'package:beltareeq/core/screens/home_page/home_page_bloc.dart';
 import 'package:beltareeq/core/services/mock_services.dart';
 import 'package:beltareeq/core/shared_widgets/location_container.dart';
 import 'package:beltareeq/core/shared_widgets/ride_options_widget.dart';
+import 'package:beltareeq/core/utils/view_observer.dart';
+import 'package:beltareeq/locator.dart';
 import 'package:flutter/material.dart';
 import '../../custom_widgets/custom_text.dart';
 
@@ -52,21 +54,10 @@ class _StartRideScreenState extends State<StartRideScreen> {
                                   text: "Your Driver from ",
                                   style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
                                   children: [
-            
                                     TextSpan(
-                                      //if uber 
-                                        // text: "Uber:",
-                                        // style: TextStyle(
-                                        //     color: ColorConstants.color_0xf0000000 fontSize: 12, fontWeight: FontWeight.bold)
-                                        //if jeeny
-                                        text: "Jeeny:",
+                                        text: locator<ViewObserver>().compName,
                                         style: TextStyle(
-                                            color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold)
-                                        //if careem
-                                        // text: "Careem:",
-                                        // style: TextStyle(
-                                        //     color: ColorConstants.color_0xf3cb44c, fontSize: 12, fontWeight: FontWeight.bold)
-                                        )
+                                            color: locator<ViewObserver>().comColor, fontSize: 12, fontWeight: FontWeight.bold))
                                   ]),
                             ),
                             Row(

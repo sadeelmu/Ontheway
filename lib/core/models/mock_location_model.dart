@@ -8,10 +8,11 @@ class LocationModel {
 }
 
 class RideOptionsMockModel {
+  final String? comName;
   final String? image;
   final String? price;
   final String? time;
   final bool? isBestPrice;
   final Color? color;
-  RideOptionsMockModel({this.image, this.price, this.time, this.isBestPrice, this.color});
+  RideOptionsMockModel(this.comName, {this.image, this.price, this.time, this.isBestPrice, this.color});
 }
