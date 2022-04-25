@@ -27,7 +27,7 @@ class RideOptionWidget extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.car_rental),
+                  Icon(Icons.car_repair_rounded),
                   SizedBox(
                     width: 10,
                   ),
