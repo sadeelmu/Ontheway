@@ -23,7 +23,9 @@ class _LocationPickupState extends State<LocationPickup> {
       searchHintText: "My location",
       buttonTab: () {
         Navigator.pushNamed(context, RoutesConstants.location_search_page).then((value) {
-          locator<ViewObserver>().rebuildViews(ViewEnum.RIDE_OPTIONS);
+          if (value == true) {
+            locator<ViewObserver>().rebuildViews(ViewEnum.RIDE_OPTIONS);
+          }
         });
       },
     );

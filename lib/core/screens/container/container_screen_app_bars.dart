@@ -1,3 +1,4 @@
+import 'package:beltareeq/core/constants/routers_constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../locator.dart';
@@ -70,6 +71,12 @@ class _AppBarViewsState extends State<AppBarViews> {
         case ViewEnum.RIDE_OPTIONS:
           viewObserver.appBarViews.add(BaseAppBar(
               leadingActionTap: () {
+                Navigator.pushNamed(context, RoutesConstants.location_search_page).then((value) {
+                  if (value == true) {
+                    viewObserver.appObserverContoller.sink.add(ViewEnum.RIDE_OPTIONS);
+                    viewObserver.viewObserverContoller.sink.add(ViewEnum.RIDE_OPTIONS);
+                  }
+                });
                 viewObserver.popScreen();
               },
               backgroundColor: ColorConstants.color_0xffffffff,

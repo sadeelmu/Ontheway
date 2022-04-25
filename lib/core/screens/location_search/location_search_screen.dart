@@ -46,7 +46,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                       alignLabelWithHint: true)),
             ),
             leadingActionTap: () {
-              Navigator.pop(context);
+              Navigator.pop(context, false);
             },
             backgroundColor: ColorConstants.color_0xff1A5AD9,
             coloredfirstTextColor: ColorConstants.color_0xffffffff,
@@ -108,7 +108,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                             subtitle: MockService().savedmockLoction[i].locationSubTitle,
                                             title: MockService().savedmockLoction[i].locationName,
                                             callBack: (value) {
-                                              Navigator.pop(context);
+                                              Navigator.pop(context, true);
                                             }),
                                       ),
                                       Divider(
@@ -160,7 +160,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                             title: MockService().recentmockLoction[i].locationName,
                                             subtitle: MockService().recentmockLoction[i].locationSubTitle,
                                             callBack: (value) {
-                                              Navigator.pop(context);
+                                              Navigator.pop(context, true);
                                             }),
                                       ),
                                       Divider(
