@@ -8,6 +8,7 @@ import 'package:beltareeq/core/screens/ride_options/ride_options_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'core/screens/home_page/home_page_screen.dart';
+import 'core/screens/rate/rate_screen.dart';
 
 Map<String, Widget Function(BuildContext context)> routes = {
   RoutesConstants.destination_page: (context) => DestinationPageScreen(),
@@ -17,5 +18,5 @@ Map<String, Widget Function(BuildContext context)> routes = {
   RoutesConstants.ride_options_page: (context) => RideOptionsScreen(),
   RoutesConstants.location_pickup: (context) => LocationPickup(),
   RoutesConstants.finish_ride: (context) => FinishRideScreen(),
-  RoutesConstants.rate_screen: (context)=> RateScreen(),
+  RoutesConstants.rate_screen: (context) => RateScreen(),
 };

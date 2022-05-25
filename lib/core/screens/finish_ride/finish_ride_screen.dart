@@ -1,4 +1,5 @@
 import 'package:beltareeq/core/constants/color_constants.dart';
+import 'package:beltareeq/core/constants/routers_constants.dart';
 import 'package:beltareeq/core/screens/home_page/home_page_bloc.dart';
 import 'package:beltareeq/core/services/mock_services.dart';
 import 'package:beltareeq/core/shared_widgets/location_container.dart';
@@ -104,7 +105,9 @@ class _FinishRideScreenState extends State<FinishRideScreen> {
                             Align(
                               alignment: Alignment.bottomCenter,
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.pushNamed(context, RoutesConstants.rate_screen);
+                                },
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(25),
                                   child: Container(
