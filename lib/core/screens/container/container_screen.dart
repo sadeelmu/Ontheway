@@ -4,6 +4,7 @@ import 'package:beltareeq/core/custom_widgets/custom_app_bar.dart';
 import 'package:beltareeq/core/enums/view_enum.dart';
 import 'package:beltareeq/core/screens/destination_page/destination_page_screen.dart';
 import 'package:beltareeq/core/screens/dropoff_page/dropoff_page_screen.dart';
+import 'package:beltareeq/core/screens/finish_ride/finish_ride_screen.dart';
 import 'package:beltareeq/core/screens/pickup_location/pickup_location_screen.dart';
 import 'package:beltareeq/core/screens/ride_options/ride_options_screen.dart';
 import 'package:beltareeq/core/utils/view_observer.dart';
@@ -40,6 +41,9 @@ class _ContainerScreenState extends State<ContainerScreen> {
           break;
         case ViewEnum.START_RIDE:
           viewObserver.views.add(StartRideScreen());
+          break;
+        case ViewEnum.FINISH_RIDE:
+          viewObserver.views.add(FinishRideScreen());
           break;
       }
       viewObserver.rebuildView.sink.add("");
