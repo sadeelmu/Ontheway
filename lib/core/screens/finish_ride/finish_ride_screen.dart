@@ -30,33 +30,101 @@ class _FinishRideScreenState extends State<FinishRideScreen> {
               borderRadius: BorderRadius.circular(10),
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 23, right: 23),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(18),
-                        child:
-                            Column(mainAxisSize: MainAxisSize.min, children: [
-                          Container(
-                            width: 80,
-                            height: 3,
-                            color: Colors.grey,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              text: "You saved ",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 12),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(18),
+                      child: Column(mainAxisSize: MainAxisSize.min, children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          height: 3,
+                          color: Colors.grey,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: ColorConstants.color_0xffffffff,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [BoxShadow(blurRadius: 10, spreadRadius: 0.1, color: Colors.black.withOpacity(0.2))]),
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              children: [
+                                CustomText(
+                                  title: "You Have Saved ",
+                                  style: const TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Divider(),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                CustomText(
+                                  title: "1.0 JD",
+                                  style: const TextStyle(
+                                      color: ColorConstants.color_0xff1A5AD9, fontSize: 20, fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Divider(),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                CustomText(
+                                  title: "Payment made successfully",
+                                  style: const TextStyle(
+                                      color: ColorConstants.color_0xff707070, fontSize: 16, fontWeight: FontWeight.normal),
+                                ),
+                              ],
                             ),
                           ),
-                        ]),
-                      ),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextButton(
+                              onPressed: () {},
+                              child: CustomText(
+                                title: "Skip",
+                                shouldFit: true,
+                                style: const TextStyle(
+                                    color: ColorConstants.color_0xff1A5AD9, fontSize: 15, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: InkWell(
+                                onTap: () {},
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(25),
+                                  child: Container(
+                                    color: ColorConstants.color_0xff1A5AD9,
+                                    width: MediaQuery.of(context).size.width * 0.3,
+                                    height: 45,
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.all(12),
+                                    child: CustomText(
+                                      shouldFit: false,
+                                      title: "Rate",
+                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ]),
                     ),
                   ),
                 ),

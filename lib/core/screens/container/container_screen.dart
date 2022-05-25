@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 
 import '../../../locator.dart';
 import '../../constants/color_constants.dart';
+import '../finish_ride/finish_ride_screen.dart';
 import '../start_ride/start_ride_screen.dart';
 
 class ContainerScreen extends StatefulWidget {
@@ -48,6 +49,7 @@ class _ContainerScreenState extends State<ContainerScreen> {
       }
       viewObserver.rebuildView.sink.add("");
     });
+
     viewObserver.viewObserverContoller.sink.add(ViewEnum.DESTENTION);
     super.initState();
   }

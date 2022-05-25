@@ -1,4 +1,5 @@
 import 'package:beltareeq/core/constants/color_constants.dart';
+import 'package:beltareeq/core/enums/view_enum.dart';
 import 'package:beltareeq/core/screens/home_page/home_page_bloc.dart';
 import 'package:beltareeq/core/services/mock_services.dart';
 import 'package:beltareeq/core/shared_widgets/location_container.dart';
@@ -127,13 +128,18 @@ class _StartRideScreenState extends State<StartRideScreen> {
                                       title: "Message",
                                       style: TextStyle(
                                           color: ColorConstants.color_0xff1A5AD9, fontWeight: FontWeight.bold, fontSize: 10)),
-                                  CustomText(
-                                      title: "Cancel Trip",
-                                      style: TextStyle(
-                                        color: ColorConstants.color_0xff1A5AD9,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 10,
-                                      )),
+                                  InkWell(
+                                    onTap: () {
+                                      locator<ViewObserver>().rebuildViews(ViewEnum.FINISH_RIDE);
+                                    },
+                                    child: CustomText(
+                                        title: "Cancel Trip",
+                                        style: TextStyle(
+                                          color: ColorConstants.color_0xff1A5AD9,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 10,
+                                        )),
+                                  ),
                                 ]),
                             SizedBox(
                               height: 20,
