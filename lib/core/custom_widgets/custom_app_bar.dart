@@ -25,6 +25,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? secondeText;
   final bool? hasCircularBorder;
   final Widget? additionalWidget;
+  final double? toolbarHeight;
 
   BaseAppBar(
       {Key? key,
@@ -39,6 +40,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.hasBackIcon = true,
       this.iconColor,
       this.avatarColor,
+      this.toolbarHeight = 350,
       this.leadingActionTap,
       this.hasCircularBorder = false,
       this.additionalWidget})
@@ -50,13 +52,14 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
         shape: hasCircularBorder!
             ? RoundedRectangleBorder(
                 borderRadius: new BorderRadius.vertical(
-                bottom: new Radius.elliptical(MediaQuery.of(context).size.width, 90.0),
+                bottom: new Radius.elliptical(
+                    MediaQuery.of(context).size.width, 90.0),
               ))
             : Border.all(width: 0, color: backgroundColor!),
         automaticallyImplyLeading: false,
         elevation: 0,
         centerTitle: true,
-        toolbarHeight: 350,
+        toolbarHeight: toolbarHeight,
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
@@ -82,26 +85,41 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
                     width: hasBackIcon! ? 10 : 0,
                   ),
                   Expanded(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      isToLined!
-                          ? RichText(
-                              text: TextSpan(
-                                  text: coloresfirstText != null ? coloresfirstText : "",
-                                  style: TextStyle(color: coloredfirstTextColor, fontSize: 12, fontWeight: FontWeight.bold),
-                                  children: [
-                                    TextSpan(
-                                      text: firstText != null ? firstText : "",
-                                      style: TextStyle(color: firstTextColor, fontSize: 12, fontWeight: FontWeight.normal),
-                                    )
-                                  ]),
-                            )
-                          : Container(),
-                      CustomText(
-                        shouldFit: true,
-                        title: secondeText,
-                        style: TextStyle(color: secondeTextColor, fontSize: 24, fontWeight: FontWeight.bold),
-                      ),
-                    ]),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          isToLined!
+                              ? RichText(
+                                  text: TextSpan(
+                                      text: coloresfirstText != null
+                                          ? coloresfirstText
+                                          : "",
+                                      style: TextStyle(
+                                          color: coloredfirstTextColor,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: firstText != null
+                                              ? firstText
+                                              : "",
+                                          style: TextStyle(
+                                              color: firstTextColor,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal),
+                                        )
+                                      ]),
+                                )
+                              : Container(),
+                          CustomText(
+                            shouldFit: true,
+                            title: secondeText,
+                            style: TextStyle(
+                                color: secondeTextColor,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ]),
                   ),
                 ],
               ),

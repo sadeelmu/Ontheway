@@ -7,4 +7,5 @@ class RoutesConstants {
   static const location_pickup = "location_pickup";
   static const dropoff_location = "dropoff_location";
   static const finish_ride = "finish_ride";
+  static const rate_screen = "rate_screen";
 }

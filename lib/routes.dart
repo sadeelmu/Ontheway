@@ -17,4 +17,5 @@ Map<String, Widget Function(BuildContext context)> routes = {
   RoutesConstants.ride_options_page: (context) => RideOptionsScreen(),
   RoutesConstants.location_pickup: (context) => LocationPickup(),
   RoutesConstants.finish_ride: (context) => FinishRideScreen(),
+  RoutesConstants.rate_screen: (context)=> RateScreen(),
 };
