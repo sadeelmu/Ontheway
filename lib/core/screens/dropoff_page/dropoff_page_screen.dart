@@ -23,7 +23,7 @@ class _DropoffLocationState extends State<DropoffLocation> {
         Navigator.pushNamed(context, RoutesConstants.location_search_page);
       },
       buttonText: "Confirm Dropoff location",
-      searchHintText: "where to go",
+      searchHintText: "Where to go",
       buttonTab: () {
         locator<ViewObserver>().rebuildViews(ViewEnum.RIDE_OPTIONS);
       },

@@ -25,9 +25,14 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
         appBar: BaseAppBar(
             additionalWidget: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(5),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(spreadRadius: 5, blurRadius: 5, color: Colors.black.withOpacity(0.05))]),
+                  boxShadow: [
+                    BoxShadow(
+                        spreadRadius: 5,
+                        blurRadius: 5,
+                        color: Colors.black.withOpacity(0.05))
+                  ]),
               child: TextField(
                   readOnly: true,
                   onTap: () {
@@ -51,7 +56,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
             backgroundColor: ColorConstants.color_0xff1A5AD9,
             coloredfirstTextColor: ColorConstants.color_0xffffffff,
             isToLined: true,
-            coloresfirstText: "AJ",
+            coloresfirstText: "User",
             hasCircularBorder: true,
             secondeText: "Dropoff Location",
             secondeTextColor: ColorConstants.color_0xffffffff,
@@ -66,7 +71,7 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                   ? Column(
                       children: [
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Container(
                           color: ColorConstants.color_0xff1A5AD9,
@@ -77,7 +82,8 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                 Container(
                                   margin: EdgeInsets.all(5),
                                   child: CircleAvatar(
-                                    backgroundColor: ColorConstants.color_0xffffffff,
+                                    backgroundColor:
+                                        ColorConstants.color_0xffffffff,
                                     child: Icon(
                                       Icons.star_outline,
                                       color: ColorConstants.color_0xff1A5AD9,
@@ -88,7 +94,9 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                   shouldFit: false,
                                   title: "Saved Places",
                                   style: TextStyle(
-                                      color: ColorConstants.color_0xffffffff, fontSize: 13, fontWeight: FontWeight.bold),
+                                      color: ColorConstants.color_0xffffffff,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -99,14 +107,20 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                           child: SingleChildScrollView(
                             child: Column(
                               children: [
-                                for (int i = 0; i < MockService().savedmockLoction.length; i++)
+                                for (int i = 0;
+                                    i < MockService().savedmockLoction.length;
+                                    i++)
                                   Column(
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: SavedLocationTiles(
-                                            subtitle: MockService().savedmockLoction[i].locationSubTitle,
-                                            title: MockService().savedmockLoction[i].locationName,
+                                            subtitle: MockService()
+                                                .savedmockLoction[i]
+                                                .locationSubTitle,
+                                            title: MockService()
+                                                .savedmockLoction[i]
+                                                .locationName,
                                             callBack: (value) {
                                               Navigator.pop(context, true);
                                             }),
@@ -129,7 +143,8 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                 Container(
                                   margin: EdgeInsets.all(5),
                                   child: CircleAvatar(
-                                    backgroundColor: ColorConstants.color_0xffffffff,
+                                    backgroundColor:
+                                        ColorConstants.color_0xffffffff,
                                     child: Icon(
                                       Icons.location_city_outlined,
                                       color: ColorConstants.color_0xff1A5AD9,
@@ -140,7 +155,9 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                                   shouldFit: false,
                                   title: "Recent Places",
                                   style: TextStyle(
-                                      color: ColorConstants.color_0xffffffff, fontSize: 13, fontWeight: FontWeight.bold),
+                                      color: ColorConstants.color_0xffffffff,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -151,14 +168,20 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
                           child: SingleChildScrollView(
                             child: Column(
                               children: [
-                                for (int i = 0; i < MockService().recentmockLoction.length; i++)
+                                for (int i = 0;
+                                    i < MockService().recentmockLoction.length;
+                                    i++)
                                   Column(
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: SavedLocationTiles(
-                                            title: MockService().recentmockLoction[i].locationName,
-                                            subtitle: MockService().recentmockLoction[i].locationSubTitle,
+                                            title: MockService()
+                                                .recentmockLoction[i]
+                                                .locationName,
+                                            subtitle: MockService()
+                                                .recentmockLoction[i]
+                                                .locationSubTitle,
                                             callBack: (value) {
                                               Navigator.pop(context, true);
                                             }),

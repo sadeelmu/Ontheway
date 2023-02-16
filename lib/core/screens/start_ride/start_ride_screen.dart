@@ -53,12 +53,18 @@ class _StartRideScreenState extends State<StartRideScreen> {
                             RichText(
                               text: TextSpan(
                                   text: "Your Driver from ",
-                                  style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
                                   children: [
                                     TextSpan(
                                         text: locator<ViewObserver>().compName,
                                         style: TextStyle(
-                                            color: locator<ViewObserver>().comColor, fontSize: 12, fontWeight: FontWeight.bold))
+                                            color: locator<ViewObserver>()
+                                                .comColor,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold))
                                   ]),
                             ),
                             Row(
@@ -69,31 +75,41 @@ class _StartRideScreenState extends State<StartRideScreen> {
                                     Container(
                                       margin: EdgeInsets.all(8),
                                       padding: EdgeInsets.all(8),
-                                      decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(10)),
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
                                       child: Icon(
                                         Icons.car_repair_outlined,
                                         color: Colors.white,
                                       ),
                                     ),
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         CustomText(
                                             shouldFit: true,
                                             title: "Name Name",
-                                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15)),
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15)),
                                         Row(
                                           children: [
                                             Icon(
                                               Icons.star_outline,
-                                              color: ColorConstants.color_0xff1A5AD9,
+                                              color: ColorConstants
+                                                  .color_0xff1A5AD9,
                                               size: 14,
                                             ),
                                             CustomText(
                                                 title: "4.9",
                                                 style: TextStyle(
-                                                    color: ColorConstants.color_0xff1A5AD9,
-                                                    fontWeight: FontWeight.normal,
+                                                    color: ColorConstants
+                                                        .color_0xff1A5AD9,
+                                                    fontWeight:
+                                                        FontWeight.normal,
                                                     fontSize: 10)),
                                           ],
                                         )
@@ -104,7 +120,9 @@ class _StartRideScreenState extends State<StartRideScreen> {
                                 CustomText(
                                     title: "1.5 JD",
                                     style: TextStyle(
-                                        color: ColorConstants.color_0xff1A5AD9, fontWeight: FontWeight.bold, fontSize: 16)),
+                                        color: ColorConstants.color_0xff1A5AD9,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16)),
                               ],
                             ),
                             SizedBox(
@@ -112,7 +130,8 @@ class _StartRideScreenState extends State<StartRideScreen> {
                             ),
                             Row(
                                 //icons here
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Icon(Icons.message_outlined),
                                   Icon(Icons.cancel_outlined),
@@ -122,27 +141,33 @@ class _StartRideScreenState extends State<StartRideScreen> {
                             ),
                             Row(
                                 //text here
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   CustomText(
                                       title: "Message",
                                       style: TextStyle(
-                                          color: ColorConstants.color_0xff1A5AD9, fontWeight: FontWeight.bold, fontSize: 10)),
+                                          color:
+                                              ColorConstants.color_0xff1A5AD9,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 10)),
                                   InkWell(
                                     onTap: () {
-                                      locator<ViewObserver>().rebuildViews(ViewEnum.FINISH_RIDE);
+                                      locator<ViewObserver>()
+                                          .rebuildViews(ViewEnum.FINISH_RIDE);
                                     },
                                     child: CustomText(
                                         title: "Cancel Trip",
                                         style: TextStyle(
-                                          color: ColorConstants.color_0xff1A5AD9,
+                                          color:
+                                              ColorConstants.color_0xff1A5AD9,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 10,
                                         )),
                                   ),
                                 ]),
                             SizedBox(
-                              height: 20,
+                              height: 5,
                             ),
                           ],
                         ),

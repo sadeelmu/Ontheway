@@ -49,7 +49,10 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                         children: [
                           CustomText(
                               title: "Select an option : ",
-                              style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold)),
                           Icon(
                             Icons.settings_outlined,
                             color: ColorConstants.color_0xff1A5AD9,
@@ -65,9 +68,11 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                           children: [
                             RideOptionWidget(
                               callback: () {
-                                locator<ViewObserver>().rebuildViews(ViewEnum.START_RIDE);
+                                locator<ViewObserver>()
+                                    .rebuildViews(ViewEnum.START_RIDE);
                                 locator<ViewObserver>().comColor = ride.color!;
-                                locator<ViewObserver>().compName = ride.comName!;
+                                locator<ViewObserver>().compName =
+                                    ride.comName!;
                               },
                               image: ride.image,
                               isBestPrice: ride.isBestPrice,
@@ -81,7 +86,7 @@ class _RideOptionsScreenState extends State<RideOptionsScreen> {
                           ],
                         ),
                       SizedBox(
-                        height: 30,
+                        height: 5,
                       )
                     ],
                   ),

@@ -23,21 +23,32 @@ class _HomePageScreenState extends State<HomePageScreen> {
             elevation: 0,
             centerTitle: true,
             toolbarHeight: 350,
-            title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            title:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               RichText(
                 text: TextSpan(
-                    style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.normal),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal),
                     text: "Good morning, ",
                     children: [
                       TextSpan(
                         text: bloc.name,
-                        style: TextStyle(color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: ColorConstants.color_0xff1A5AD9,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
                       )
                     ]),
               ),
+              SizedBox(height: 30),
               CustomText(
                 title: "Where are you going?",
-                style: TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
               ),
             ]),
             backgroundColor: ColorConstants.color_0xffffffff,
@@ -63,7 +74,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            TextField(decoration: InputDecoration(hintText: "Where to", border: InputBorder.none)),
+                            TextField(
+                                decoration: InputDecoration(
+                                    hintText: "Where to",
+                                    border: InputBorder.none)),
                             Divider(
                               color: Colors.grey,
                             ),
@@ -76,11 +90,16 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 CustomText(
                                   title: "History -7th Circle, Amman",
                                   style: TextStyle(
-                                      color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
+                                      color: ColorConstants.color_0xff1A5AD9,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 CustomText(
                                   title: "Home",
-                                  style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -102,9 +121,13 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                       child: FittedBox(
                                         fit: BoxFit.fill,
                                         child: CustomText(
-                                          title: "History -To - Al-Shaymaa As-Saadeyah St., Amman",
+                                          title:
+                                              "History -To - Al-Shaymaa As-Saadeyah St., Amman",
                                           style: TextStyle(
-                                              color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
+                                              color: ColorConstants
+                                                  .color_0xff1A5AD9,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
                                         ),
                                       ),
                                     ),
@@ -113,7 +136,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
                                 CustomText(
                                   title: "Psut",
                                   style: TextStyle(
-                                      color: ColorConstants.color_0xff1A5AD9, fontSize: 16, fontWeight: FontWeight.bold),
+                                      color: ColorConstants.color_0xff1A5AD9,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),

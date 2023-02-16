@@ -29,7 +29,8 @@ class _RateScreenState extends State<RateScreen> {
                 decoration: BoxDecoration(
                     color: ColorConstants.color_0xff1A5AD9,
                     borderRadius: new BorderRadius.vertical(
-                      bottom: new Radius.elliptical(MediaQuery.of(context).size.width, 90.0),
+                      bottom: new Radius.elliptical(
+                          MediaQuery.of(context).size.width, 90.0),
                     )),
                 child: SafeArea(
                   child: Padding(
@@ -48,17 +49,23 @@ class _RateScreenState extends State<RateScreen> {
                                     Icons.arrow_back,
                                     color: ColorConstants.color_0xff1A5AD9,
                                   ),
-                                  backgroundColor: ColorConstants.color_0xffffffff),
+                                  backgroundColor:
+                                      ColorConstants.color_0xffffffff),
                             ),
                             SizedBox(width: 10),
                             Expanded(
-                              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                CustomText(
-                                  title: "You are in place",
-                                  style: TextStyle(
-                                      color: ColorConstants.color_0xff1A5AD9, fontSize: 12, fontWeight: FontWeight.bold),
-                                )
-                              ]),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    CustomText(
+                                      title: "You are in place",
+                                      style: TextStyle(
+                                          color:
+                                              ColorConstants.color_0xff1A5AD9,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ]),
                             ),
                           ],
                         ),
@@ -71,7 +78,6 @@ class _RateScreenState extends State<RateScreen> {
                 top: 100,
                 left: MediaQuery.of(context).size.width / 2.3,
                 child: CircleAvatar(
-                  radius: ,
                   backgroundColor: Colors.green,
                 ),
               )
